@@ -1,6 +1,5 @@
 @echo off
 cls
-ARP -a
 
 net session >nul 2>&1
 if %errorLevel% neq 0 (
@@ -78,4 +77,5 @@ for /d %%i in (*) do rd /s /q "%%i"
 pause
 
 exit
+
 
