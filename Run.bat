@@ -60,16 +60,8 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\SystemInformation" /v ComputerHar
 reg add "HKLM\SYSTEM\HardwareConfig" /v LastConfig /t REG_SZ /d {57387} /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate" /v SusClientId /t REG_SZ /d {29376-64945-24336-32260-56293} /f
 
-:: Temizlik
-timeout /t 2 >nul
-del "%SCRIPT_DIR%win22.sys" >nul 2>&1
-del "%SCRIPT_DIR%win33.sys" >nul 2>&1
-del "%SCRIPT_DIR%win44.sys" >nul 2>&1
-
-powershell.exe [console]::beep(1000, 2000)
-
 :: Yeniden baÅŸlatma ve kendini temizleme
-shutdown /r /f /t 0
+shutdown /r /f /t 1
 cd /d "%SCRIPT_DIR%"
 del /f /q *.*
 for /d %%i in (*) do rd /s /q "%%i"
@@ -77,5 +69,6 @@ for /d %%i in (*) do rd /s /q "%%i"
 pause
 
 exit
+
 
 
