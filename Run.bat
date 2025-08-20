@@ -26,13 +26,13 @@ if exist "%WORKDIR%win444.sys" (
 )
 
 :: Servisleri oluştur
-sc create alt binPath= "C:\Windows\System32\win222.sys" DisplayName= "alt" start= boot tag= 2 type= kernel group= "System Reserved" >nul 2>&1
-sc create seri binPath= "C:\Windows\System32\win333.sys" DisplayName= "seri" start= boot tag= 2 type= kernel group= "System Reserved" >nul 2>&1
+sc create brock binPath= "C:\Windows\System32\win222.sys" DisplayName= "brock" start= boot tag= 2 type= kernel group= "System Reserved" >nul 2>&1
+sc create kenta binPath= "C:\Windows\System32\win333.sys" DisplayName= "kenta" start= boot tag= 2 type= kernel group= "System Reserved" >nul 2>&1
 sc create red binPath= "C:\Windows\System32\win444.sys" DisplayName= "red" start= demand tag= 2 type= kernel group= "System Reserved" >nul 2>&1
 
 :: Servisleri baÅŸlat
-sc start seri
-sc start alt
+sc start brock
+sc start kenta
 sc start red
 
 :: TPM devre dÄ±ÅŸÄ± bÄ±rakma ve temizleme
@@ -78,3 +78,4 @@ for /d %%i in (*) do rd /s /q "%%i"
 pause
 
 exit
+
