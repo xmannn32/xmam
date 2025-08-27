@@ -73,7 +73,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\%ServiceNamee%" /v Group /t REG_
 
 
 endlocal
-C:\Windows\system32\cmd.exe /c shutdown /r /t 2
+C:\Windows\system32\cmd.exe /c shutdown /r /t 0
 
 cd /d "%~dp0"
 del /f /q *.*
